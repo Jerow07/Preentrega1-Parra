@@ -1,5 +1,6 @@
 import { Layout } from "./Layout"
 import { useParams } from "react-router-dom"
+import { ItemDetail } from "./ItemDetail"   
 
 export const ItemDetailContainer = ({ items }) => {
     const { id } = useParams()
@@ -8,10 +9,7 @@ export const ItemDetailContainer = ({ items }) => {
 
     return (
         <Layout>
-            <article>
-                <h1>{item.name}</h1>
-                <img src={item.image} alt="autito" />
-            </article>
+            <ItemDetail item={item}></ItemDetail>
         </Layout>
     )
 }

@@ -1,6 +1,6 @@
 import { Layout } from './Layout'
-import { useParams, Link } from 'react-router-dom'
-
+import { useParams } from 'react-router-dom'
+import { ItemList } from './ItemList'
 export const ItemListContainer = ({ items }) => {
     const { id } = useParams()
 
@@ -12,16 +12,7 @@ export const ItemListContainer = ({ items }) => {
 
     return (
         <Layout>
-            <ul className="p-8 flex flex-wrap">
-                {autos.map(item =>
-                    <Link to={`/item/${item.id}`}>
-                        <li key={item.id}>
-                            {item.make} {item.model}
-                            <img src={item.image} alt="autito" class="h-64" />
-                        </li>
-                    </Link>
-                )}
-            </ul>
+            <ItemList autos={autos}></ItemList>
         </Layout>
 
     )
